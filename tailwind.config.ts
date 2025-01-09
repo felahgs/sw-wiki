@@ -1,4 +1,5 @@
 import { Primary } from "@/components/Button/Button.stories";
+import { title } from "process";
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 
@@ -59,7 +60,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        Archivo: ["Archivo", "sans-serif"],
+        title: ["Exo", "sans-serif"],
+        body: ["Lato", "sans-serif"],
       },
     },
   },

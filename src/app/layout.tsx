@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { Lato, Exo } from "next/font/google";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,8 +8,13 @@ import "./globals.css";
 
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
 
-const archivo = Archivo({ subsets: ["latin"] });
+const lato = Lato({
+  subsets: ["latin"],
+  weight: "100",
+});
+const exo = Exo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Star Wars Wiki",
@@ -33,7 +37,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={archivo.className}>
+      <body>
         <Header
           className="text-black shrink-0"
           logo={<div>Logo</div>}
@@ -41,7 +45,40 @@ export default function RootLayout({
         />
         {children}
         <Footer className="shrink-0">
-          <div>footer</div>
+          <div className="container mx-auto px-6 text-center space-y-4">
+            <p className="text-sm">
+              Star Wars and all related names, images, and characters are
+              copyright © Lucasfilm Ltd. This is a fan-made application and is
+              not affiliated with or endorsed by Lucasfilm Ltd.
+            </p>
+            <p className="text-sm">
+              Data provided by the{" "}
+              <a
+                href="https://swapi.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:underline"
+              >
+                Star Wars API (SWAPI)
+              </a>
+              .
+            </p>
+            <nav className="flex justify-center space-x-4 text-sm">
+              <a href="/about" className="hover:underline">
+                About
+              </a>
+              <a href="/privacy-policy" className="hover:underline">
+                Privacy Policy
+              </a>
+              <a href="/contact" className="hover:underline">
+                Contact
+              </a>
+            </nav>
+            <p className="text-xs mt-4 text-gray-500">
+              © {new Date().getFullYear()} Star Wars Universe Wiki. All rights
+              reserved.
+            </p>
+          </div>
         </Footer>
       </body>
     </html>
