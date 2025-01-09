@@ -37,13 +37,13 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gray-900">
         <Header
           className="text-black shrink-0"
           logo={<div>Logo</div>}
           navItems={navigation}
         />
-        {children}
+        <div className="grow">{children}</div>
         <Footer className="shrink-0">
           <div className="container mx-auto px-6 text-center space-y-4">
             <p className="text-sm">
@@ -75,8 +75,7 @@ export default function RootLayout({
               </a>
             </nav>
             <p className="text-xs mt-4 text-gray-500">
-              © {new Date().getFullYear()} Star Wars Universe Wiki. All rights
-              reserved.
+              © {new Date().getFullYear()} Galaxy Wiki. All rights reserved.
             </p>
           </div>
         </Footer>
