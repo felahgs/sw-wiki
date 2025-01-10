@@ -8,12 +8,14 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   fluid?: boolean;
   disabled?: boolean;
+  active?: boolean;
 }
 
 function Button({
   variant = "primary",
   fluid = false,
   loading = false,
+  active = false,
   children,
   disabled,
   className,
@@ -28,17 +30,19 @@ function Button({
   };
 
   const disabledClass = "opacity-50 cursor-not-allowed pointer-events-none";
+  const activeClass = "bg-active";
 
   return (
     <button
       disabled={disabled || loading}
       className={clsx(
-        " rounded-lg font-bold border trasition-all duration-200 ease-in-out",
+        "rounded-lg font-bold border trasition-all duration-200 ease-in-out active:bg-active ",
         variantClass[variant],
         fluid && "w-full",
         disabled && disabledClass,
         loading && disabledClass,
-        className,
+        active && activeClass,
+        className
       )}
       {...rest}
     >
