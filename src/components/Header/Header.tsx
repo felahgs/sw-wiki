@@ -12,8 +12,8 @@ function Header({ logo, navItems, className, ...rest }: HeaderProps) {
   return (
     <header
       className={clsx(
-        "flex  justify-center items-center w-full bg-zinc-100 h-16 px-6 sm:px-12",
-        className,
+        "flex justify-center items-center w-full bg-gradient-to-r from-gray-600 to-gray-800 text-gray-300 h-16 px-6 sm:px-12",
+        className
       )}
       {...rest}
     >

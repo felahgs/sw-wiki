@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default async function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center text-white py-20 px-6">

@@ -36,23 +36,9 @@ const config: Config = {
           background: colors.yellow[100],
           border: colors.yellow[500],
         },
-        neutral: {
-          dark: colors.neutral[700],
-        },
-        stroke: {
-          secondary: colors.neutral[500],
-          tertiary: colors.gray[100],
-        },
-        icon: {
-          primary: colors.neutral[400],
-          active: colors.zinc[600],
-        },
       },
       textColor: {
-        primary: colors.neutral[700],
-        success: colors.green[700],
-        warning: colors.yellow[700],
-        danger: colors.red[700],
+        primary: colors.neutral[200],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
