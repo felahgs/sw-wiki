@@ -18,15 +18,15 @@ interface FilmProperties {
   starships?: string[];
   vehicles?: string[];
   species?: string[];
-  created?: string;
-  edited?: string;
-  producer?: string;
-  title?: string;
-  episode_id?: number;
-  director?: string;
-  release_date?: string;
-  opening_crawl?: string;
-  url?: string;
+  created: string;
+  edited: string;
+  producer: string;
+  title: string;
+  episode_id: number;
+  director: string;
+  release_date: string;
+  opening_crawl: string;
+  url: string;
 }
 
 export async function listFilms(): Promise<FilmsReponse> {
