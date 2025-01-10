@@ -14,8 +14,6 @@ async function CharactersList({
   charactersPromise,
   page = 1,
 }: CharactersListProps) {
-  console.log("charactersPromise", charactersPromise);
-  //   const { characters = [], totalPages } = await charactersPromise();
   const { results: characters, total_pages: totalPages } =
     await charactersPromise(page);
 

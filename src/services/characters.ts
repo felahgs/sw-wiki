@@ -47,8 +47,6 @@ export async function listCharacters(
 ): Promise<CharactersResponse> {
   try {
     const queryString = `?page=${queryParams?.page ?? "1"}&limit=${queryParams?.limit ?? 12}&search=${queryParams?.search}`;
-    console.log();
-    // const response = await apiClient.get(`/people`);
     const response = await apiClient.get(`/people${queryString}`);
     return response.data;
   } catch (error) {

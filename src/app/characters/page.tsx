@@ -1,10 +1,10 @@
-import { listCharacters } from "@/services/characters";
 import React, { Suspense } from "react";
 
+import { listCharacters } from "@/services/characters";
 import Button from "@/components/Button";
+
 import CharactersList from "./characters_list";
 import Loading from "../loading";
-import CharactersPagination from "./pagination";
 
 interface PageProps {
   searchParams: Promise<{ page?: number; search?: string }>;
@@ -17,7 +17,6 @@ async function fetchCharacters(page?: number, search?: string) {
 
 async function CharactersPage({ searchParams }: PageProps) {
   const { page = 1, search } = await searchParams;
-  // const { total_pages: totalPages } = await listCharacters();
 
   return (
     <div className="flex flex-col items-center h-full text-primary py-10 px-6 w-full max-w-screen-xl space-y-6 ">
@@ -38,7 +37,6 @@ async function CharactersPage({ searchParams }: PageProps) {
         <Suspense key={page} fallback={<Loading />}>
           <CharactersList page={page} charactersPromise={fetchCharacters} />
         </Suspense>
-        {/* <CharactersPagination page={page} totalPages={totalPages} /> */}
       </div>
     </div>
   );

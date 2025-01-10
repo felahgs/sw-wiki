@@ -11,12 +11,9 @@ interface CharacterPaginationProps {
 
 function CharactersPagination({ page, totalPages }: CharacterPaginationProps) {
   const router = useRouter();
-  const [isPending, startTransition] = useTransition();
 
   function handlePageChange(page: string | number) {
-    startTransition(() => {
-      router.push(`/characters/?page=${page}`);
-    });
+    router.push(`/characters/?page=${page}`);
   }
 
   return (

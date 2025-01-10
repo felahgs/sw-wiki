@@ -12,7 +12,11 @@ export interface CustomLinkProps extends LinkProps {
 function Link({ children, className, active, ...props }: CustomLinkProps) {
   return (
     <NextLink
-      className={clsx("hover:underline", className, active && "text-tertiary")}
+      className={clsx(
+        "hover:underline",
+        className,
+        active && "text-tertiary active",
+      )}
       {...props}
     >
       {children}
