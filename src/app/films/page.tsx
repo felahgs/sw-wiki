@@ -5,8 +5,6 @@ async function FilmsPage() {
   const response = await listFilms();
   const { result: films } = response;
 
-  console.log("films", films);
-
   return (
     <div className="flex flex-col items-center justify-center  text-primary py-10 px-6 w-full max-w-screen-xl space-y-6">
       <h1 className="text-4xl font-bold text-tertiary">Films</h1>
