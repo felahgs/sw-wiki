@@ -34,10 +34,12 @@ const Pagination: React.FC<PaginationProps> = ({
     };
   }
 
+  if (!totalPages) return null;
+
   return (
     <nav
       aria-labelledby="pagination"
-      className="flex items-center justify-center space-x-2 mt-4"
+      className="flex items-center justify-center  mt-4"
     >
       <h2 id="pagination" className="sr-only">
         Pagination
@@ -76,7 +78,7 @@ const Pagination: React.FC<PaginationProps> = ({
           <Button
             aria-label={"Go to next page"}
             onClick={handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
+            disabled={currentPage === totalPages || !totalPages}
             className={`${buttonShape}`}
           >
             Next

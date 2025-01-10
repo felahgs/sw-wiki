@@ -48,7 +48,7 @@ describe("listCharacters function", () => {
     const queryParams: QueryParams = {
       page: 1,
       limit: 12,
-      search: "nonexistent",
+      name: "nonexistent",
     };
     const result = await listCharacters(queryParams);
 
