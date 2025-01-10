@@ -6,8 +6,8 @@
 @tailwind utilities;
 
 body {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
   font-family: "Lato", serif;
   height: 100vh;

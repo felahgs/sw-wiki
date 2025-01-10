@@ -26,7 +26,7 @@ function LayoutFooter() {
         <p className="text-sm">
           Developed by{" "}
           <a
-            href="https://github.com/felahts/"
+            href="https://github.com/felahgs/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:underline"

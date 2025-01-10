@@ -8,7 +8,7 @@ async function FilmsPage() {
   console.log("films", films);
 
   return (
-    <div className="flex flex-col items-center justify-center text-primary py-20 px-6 w-full max-w-screen-xl space-y-6">
+    <div className="flex flex-col items-center justify-center  text-primary py-10 px-6 w-full max-w-screen-xl space-y-6">
       <h1 className="text-4xl font-bold text-tertiary">Films</h1>
       {films.map((film) => (
         <div key={film.properties.url}>
