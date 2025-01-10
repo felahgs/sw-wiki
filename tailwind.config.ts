@@ -39,6 +39,8 @@ const config: Config = {
       },
       textColor: {
         primary: colors.neutral[200],
+        secondary: colors.cyan[400],
+        tertiary: colors.yellow[400],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
