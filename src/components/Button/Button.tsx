@@ -2,7 +2,6 @@
 import React, { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 import Loader from "../Loader";
-import Loading from "@/app/loading";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "text";
@@ -24,7 +23,7 @@ function Button({
 }: ButtonProps) {
   const variantClass = {
     primary:
-      "text-white border-zinc-600 hover:bg-zinc-700 active:bg-zinc-800 active:shadow-inner p-3.5 ",
+      "bg-zinc-600 text-white border-zinc-600 hover:bg-zinc-700 active:bg-zinc-800 active:shadow-inner p-3.5",
     secondary:
       "bg-white text-neutral-700 border-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:shadow-inner p-3.5",
     text: "border-none p-0",
@@ -36,11 +35,12 @@ function Button({
     <button
       disabled={disabled || loading}
       className={clsx(
-        "rounded-lg font-bold border trasition-all duration-200 ease-in-out hover:bg-cyan-600 active:bg-cyan-700 ",
+        `bg-zinc-600 rounded-lg font-bold border trasition-all duration-200 ease-in-out hover:bg-cyan-600 active:bg-cyan-700 `,
+        variantClass[variant],
         fluid && "w-full",
         disabled && disabledClass,
         loading && disabledClass,
-        active && "bg-cyan-700",
+        active && "bg-cyan-800",
         className,
       )}
       {...rest}

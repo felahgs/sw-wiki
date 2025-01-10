@@ -28,6 +28,12 @@ const Pagination: React.FC<PaginationProps> = ({
 
   const buttonShape = "px-3 py-1 rounded-md";
 
+  function handlePageChange(newPage: number) {
+    return () => {
+      onPageChange(newPage);
+    };
+  }
+
   return (
     <nav
       aria-labelledby="pagination"
@@ -39,7 +45,7 @@ const Pagination: React.FC<PaginationProps> = ({
       <ul className="flex items-center justify-center space-x-2 mt-4">
         <li>
           <Button
-            onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
+            onClick={handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
             className={`${buttonShape}`}
             aria-label="Go to previous page"
@@ -54,8 +60,8 @@ const Pagination: React.FC<PaginationProps> = ({
                 aria-label={"Go to page " + page}
                 aria-selected={page === currentPage}
                 active={page === currentPage}
-                onClick={() => onPageChange(page)}
                 className={`${buttonShape}`}
+                onClick={handlePageChange(page)}
               >
                 {page}
               </Button>
@@ -64,13 +70,12 @@ const Pagination: React.FC<PaginationProps> = ({
             <li key={`ellipsis-${index}`}>
               <span className="px-3 py-1 text-gray-500 select-none">...</span>
             </li>
-          )
+          ),
         )}
         <li>
           <Button
-            onClick={() =>
-              currentPage < totalPages && onPageChange(currentPage + 1)
-            }
+            aria-label={"Go to next page"}
+            onClick={handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
             className={`${buttonShape}`}
           >
