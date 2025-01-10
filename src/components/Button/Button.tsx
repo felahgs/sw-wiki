@@ -1,3 +1,4 @@
+"use client";
 import React, { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 import Loader from "../Loader";
@@ -23,26 +24,24 @@ function Button({
 }: ButtonProps) {
   const variantClass = {
     primary:
-      "bg-zinc-600 text-white border-zinc-600 hover:bg-zinc-700 active:bg-zinc-800 active:shadow-inner p-3.5",
+      "text-white border-zinc-600 hover:bg-zinc-700 active:bg-zinc-800 active:shadow-inner p-3.5 ",
     secondary:
       "bg-white text-neutral-700 border-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:shadow-inner p-3.5",
     text: "border-none p-0",
   };
 
   const disabledClass = "opacity-50 cursor-not-allowed pointer-events-none";
-  const activeClass = "bg-active";
 
   return (
     <button
       disabled={disabled || loading}
       className={clsx(
-        "rounded-lg font-bold border trasition-all duration-200 ease-in-out active:bg-active ",
-        variantClass[variant],
+        "rounded-lg font-bold border trasition-all duration-200 ease-in-out hover:bg-cyan-600 active:bg-cyan-700 ",
         fluid && "w-full",
         disabled && disabledClass,
         loading && disabledClass,
-        active && activeClass,
-        className
+        active && "bg-cyan-700",
+        className,
       )}
       {...rest}
     >

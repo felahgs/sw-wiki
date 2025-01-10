@@ -12,7 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        active: colors.cyan[700],
+        active: colors.blue[700],
         info: {
           DEFAULT: colors.blue[400],
           text: colors.blue[700],

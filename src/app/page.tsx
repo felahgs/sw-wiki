@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default async function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center text-primary py-20 px-6">
@@ -10,12 +12,18 @@ export default async function HomePage() {
           films and characters.
         </p>
         <div className="space-x-4">
-          <button className="bg-blue-500 text-primary py-2 px-4 rounded-md text-lg font-semibold hover:bg-blue-600">
+          <Link
+            href={"/films"}
+            className="bg-blue-500 text-primary py-2 px-4 rounded-md text-lg font-semibold hover:bg-blue-600"
+          >
             Explore Films
-          </button>
-          <button className="bg-green-500 text-primary py-2 px-4 rounded-md text-lg font-semibold hover:bg-green-600">
+          </Link>
+          <Link
+            href={"/characters"}
+            className="bg-green-500 text-primary py-2 px-4 rounded-md text-lg font-semibold hover:bg-green-600"
+          >
             View Characters
-          </button>
+          </Link>
         </div>
       </div>
     </div>

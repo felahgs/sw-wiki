@@ -1,20 +1,26 @@
 import { listCharacters } from "@/services/characters";
 import React, { Suspense } from "react";
-import CharactersPagination from "./pagination";
+
 import Button from "@/components/Button";
+import CharactersList from "./characters_list";
+import Loading from "../loading";
+import CharactersPagination from "./pagination";
 
 interface PageProps {
-  searchParams: Promise<{ page?: string; search?: string }>;
+  searchParams: Promise<{ page?: number; search?: string }>;
+}
+
+async function fetchCharacters(page?: number, search?: string) {
+  const response = await listCharacters({ page });
+  return response;
 }
 
 async function CharactersPage({ searchParams }: PageProps) {
   const { page = 1, search } = await searchParams;
-
-  const response = await listCharacters({ page });
-  const { results: characters, total_pages: totalPages } = response;
+  // const { total_pages: totalPages } = await listCharacters();
 
   return (
-    <div className="flex flex-col items-center h-full text-primary py-10 px-6 w-full max-w-screen-xl space-y-6">
+    <div className="flex flex-col items-center h-full text-primary py-10 px-6 w-full max-w-screen-xl space-y-6 ">
       <h1 className="text-4xl font-bold text-tertiary">Characters</h1>
 
       <div className="flex w-full max-w-md items-center ">
@@ -29,20 +35,10 @@ async function CharactersPage({ searchParams }: PageProps) {
       </div>
 
       <div className="flex flex-col justify-between gap-8 h-full w-full">
-        <Suspense fallback="Loading">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
-            {characters.map((character) => (
-              <div
-                key={character.uid}
-                className="bg-gray-800 text-secondary p-4 rounded-md shadow hover:shadow-lg transition-shadow"
-              >
-                <h2 className="text-xl font-semibold">{character.name}</h2>
-              </div>
-            ))}
-          </div>
+        <Suspense key={page} fallback={<Loading />}>
+          <CharactersList page={page} charactersPromise={fetchCharacters} />
         </Suspense>
-
-        <CharactersPagination page={+page} totalPages={totalPages} />
+        {/* <CharactersPagination page={page} totalPages={totalPages} /> */}
       </div>
     </div>
   );

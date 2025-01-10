@@ -16,7 +16,7 @@ export interface CharactersResponse {
 
 export interface QueryParams {
   limit?: number;
-  page?: number | string;
+  page?: number;
   search?: string;
 }
 
@@ -43,7 +43,7 @@ interface CharacterProperties {
 }
 
 export async function listCharacters(
-  queryParams?: QueryParams
+  queryParams?: QueryParams,
 ): Promise<CharactersResponse> {
   try {
     const queryString = `?page=${queryParams?.page ?? "1"}&limit=${queryParams?.limit ?? 12}&search=${queryParams?.search}`;

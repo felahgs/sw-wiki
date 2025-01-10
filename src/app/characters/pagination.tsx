@@ -2,7 +2,7 @@
 
 import Pagination from "@/components/Pagination";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useTransition } from "react";
 
 interface CharacterPaginationProps {
   totalPages: number;
@@ -11,9 +11,12 @@ interface CharacterPaginationProps {
 
 function CharactersPagination({ page, totalPages }: CharacterPaginationProps) {
   const router = useRouter();
+  const [isPending, startTransition] = useTransition();
 
   function handlePageChange(page: string | number) {
-    router.push(`/characters/?page=${page}`);
+    startTransition(() => {
+      router.push(`/characters/?page=${page}`);
+    });
   }
 
   return (

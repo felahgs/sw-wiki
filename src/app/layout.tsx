@@ -5,13 +5,14 @@ import LayoutHeader from "./header";
 import LayoutFooter from "./footer";
 
 import "./globals.css";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Star Wars Wiki",
   description: "A resource page for information from a galaxy far far away.",
 };
 
-export default function RootLayout({
+export default function RootTemplate({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-900 text-primary">
         <LayoutHeader />
-        <div className="grow">{children}</div>
+        <div className="flex justify-center grow w-full ">{children}</div>
         <LayoutFooter />
       </body>
     </html>
