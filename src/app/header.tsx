@@ -1,11 +1,11 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { HTMLAttributes, useMemo } from "react";
 import Link from "@/components/CustomLink";
 import { usePathname } from "next/navigation";
 
 import Header from "@/components/Header";
 
-function LayoutHeader() {
+function LayoutHeader({ ...props }: HTMLAttributes<HTMLDivElement>) {
   const pathname = usePathname();
 
   const navigation = useMemo(
@@ -26,7 +26,8 @@ function LayoutHeader() {
 
   return (
     <Header
-      className="text-black shrink-0"
+      {...props}
+      className="text-black shrink-0 sticky top-[-1px]"
       logo={
         <Link className="text-xl" active={pathname === "/"} key="home" href="/">
           Home

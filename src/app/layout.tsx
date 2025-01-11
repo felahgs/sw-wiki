@@ -5,7 +5,6 @@ import LayoutHeader from "./header";
 import LayoutFooter from "./footer";
 
 import "./globals.css";
-import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Star Wars Wiki",
@@ -19,7 +18,7 @@ export default function RootTemplate({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-900 text-primary">
+      <body className="bg-background text-primary">
         <LayoutHeader />
         <div className="flex justify-center grow w-full ">{children}</div>
         <LayoutFooter />

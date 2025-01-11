@@ -10,7 +10,9 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Lato", serif;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+  /* height: 100vh; */
 }
 
 h1,
@@ -31,4 +33,8 @@ h6 {
   flex-direction: column;
   gap: 10px;
   max-width: 350px;
+}
+
+html:has(#page_title:is(:target, :not(:in-viewport))) #back_to_top {
+  display: inline-block !important;
 }

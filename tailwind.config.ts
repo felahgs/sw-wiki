@@ -12,6 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        background: colors.gray[900],
         active: colors.blue[700],
         info: {
           DEFAULT: colors.blue[400],

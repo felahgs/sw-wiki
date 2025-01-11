@@ -1,10 +1,10 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 
 import Footer from "@/components/Footer";
 
-function LayoutFooter() {
+function LayoutFooter({ ...props }: HTMLAttributes<HTMLDivElement>) {
   return (
-    <Footer className="shrink-0">
+    <Footer {...props} className="shrink-0">
       <div className="container mx-auto px-6 text-center space-y-3">
         <p className="text-sm">
           Star Wars and all related names, images, and characters are copyright
