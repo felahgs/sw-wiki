@@ -47,7 +47,7 @@ export interface PlanetResponse {
   result: Planet;
 }
 
-export async function listCharacters(
+export async function listPlanets(
   queryParams?: QueryParams,
 ): Promise<PlanetsResponse> {
   try {
@@ -76,9 +76,7 @@ export async function listCharacters(
   }
 }
 
-export async function getCharacter(
-  id: number | string,
-): Promise<PlanetResponse> {
+export async function getPlanet(id: number | string): Promise<PlanetResponse> {
   try {
     console.log("id", id);
     const response = await apiClient.get(`/planets/${id}`);

@@ -1,18 +1,18 @@
 import {
-  listCharacters,
-  CharactersResponse,
+  getPlanet,
+  listPlanets,
+  PlanetResponse,
+  PlanetsResponse,
   QueryParams,
-  CharacterResponse,
-  getCharacter,
-} from "@/services/characters";
+} from "@/services/planets";
 import apiClient from "@/services/api";
-import { character, characterList } from "@/utils/mocks";
+import { planet, planetList } from "@/utils/mocks";
 
 jest.mock("@/services/api", () => ({
   get: jest.fn(),
 }));
 
-describe("listCharacters", () => {
+describe("listPlanets", () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
@@ -21,33 +21,32 @@ describe("listCharacters", () => {
     jest.spyOn(console, "log").mockImplementation(() => {});
   });
 
-  it("should return characters data on a successful API call", async () => {
-    const mockResponse: CharactersResponse = {
-      results: characterList,
+  it("should return planets data on a successful API call", async () => {
+    const mockResponse = {
+      results: planetList,
       total_pages: 1,
       total_records: 2,
     };
 
     (apiClient.get as jest.Mock).mockResolvedValue({ data: mockResponse });
 
-    const queryParams: QueryParams = { page: 1, limit: 12 };
-    const result = await listCharacters(queryParams);
+    const result = await listPlanets();
 
     expect(result).toEqual(mockResponse);
     expect(result.results.length).toBe(2);
-    expect(result.results[0].name).toBe("Luke Skywalker");
+    expect(result.results[0].name).toBe("Tatooine");
   });
 
-  it("should return a filtered and ordered character list when using the name filter", async () => {
-    const mockResponse: CharactersResponse = {
-      result: [character],
+  it("should return a filtered and ordered planets list when using the name filter", async () => {
+    const mockResponse: PlanetsResponse = {
+      result: [planet],
       results: [],
       total_pages: 1,
       total_records: 1,
     };
 
-    const expectedResponse: CharactersResponse = {
-      results: [characterList[0]],
+    const expectedResponse: PlanetsResponse = {
+      results: [planetList[0]],
       total_pages: 1,
       total_records: 1,
     };
@@ -55,15 +54,15 @@ describe("listCharacters", () => {
     (apiClient.get as jest.Mock).mockResolvedValue({ data: mockResponse });
 
     const queryParams: QueryParams = { page: 1, limit: 12 };
-    const result = await listCharacters(queryParams);
+    const result = await listPlanets(queryParams);
 
     expect(result).toEqual(expectedResponse);
     expect(result.results.length).toBe(1);
-    expect(result.results[0].name).toBe("Luke Skywalker");
+    expect(result.results[0].name).toBe("Tatooine");
   });
 
-  it("should return an empty array if no characters are found", async () => {
-    const mockResponse: CharactersResponse = {
+  it("should return an empty results array if no planets are found", async () => {
+    const mockResponse: PlanetsResponse = {
       results: [],
       total_pages: 0,
       total_records: 0,
@@ -76,7 +75,7 @@ describe("listCharacters", () => {
       limit: 12,
       name: "nonexistent",
     };
-    const result = await listCharacters(queryParams);
+    const result = await listPlanets(queryParams);
 
     expect(result.results.length).toBe(0);
     expect(result.total_records).toBe(0);
@@ -85,11 +84,9 @@ describe("listCharacters", () => {
   it("should throw an error if the API request fails", async () => {
     (apiClient.get as jest.Mock).mockRejectedValue(new Error("Network Error"));
 
-    try {
-      await listCharacters();
-    } catch (error) {
-      expect(error).toEqual(new Error("Failed to fetch characters"));
-    }
+    await expect(listPlanets({ page: 1 })).rejects.toThrow(
+      "Failed to fetch planets",
+    );
   });
 });
 
@@ -103,26 +100,26 @@ describe("getCharacter", () => {
   });
 
   it("should return one character data on a successful API call", async () => {
-    const mockResponse: CharacterResponse = {
-      result: character,
+    const mockResponse: PlanetResponse = {
+      result: planet,
     };
 
     (apiClient.get as jest.Mock).mockResolvedValue({ data: mockResponse });
 
-    const result = await getCharacter(1);
+    const result = await getPlanet(1);
 
     expect(result).toEqual(mockResponse);
-    expect(result.result.properties.name).toBe("Luke Skywalker");
-    expect(result.result.properties.hair_color).toBe("blond");
+    expect(result.result.properties.name).toBe("Tatooine");
+    expect(result.result.properties.terrain).toBe("desert");
   });
 
   it("should throw an error if the API request fails", async () => {
     (apiClient.get as jest.Mock).mockRejectedValue(new Error("Network Error"));
 
     try {
-      await getCharacter(1);
+      await getPlanet(1);
     } catch (error) {
-      expect(error).toEqual(new Error("Failed to fetch the character"));
+      expect(error).toEqual(new Error("Failed to fetch the planet"));
     }
   });
 });
