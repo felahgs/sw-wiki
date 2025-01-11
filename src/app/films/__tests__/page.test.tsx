@@ -14,11 +14,11 @@ describe("FilmsPage", () => {
 
     render(await FilmsPage());
 
-    await waitFor(() => screen.getByText("The Empire Strikes Back"));
+    await waitFor(() => screen.getAllByText("The Empire Strikes Back"));
 
-    expect(screen.getByText("The Empire Strikes Back")).toBeInTheDocument();
+    expect(screen.getAllByText("The Empire Strikes Back")).toHaveLength(2);
     expect(screen.getByText("Opening crawl for Film 1")).toBeInTheDocument();
-    expect(screen.getByText("A New Hope")).toBeInTheDocument();
+    expect(screen.getAllByText("A New Hope")).toHaveLength(2);
     expect(screen.getByText("Opening crawl for Film 2")).toBeInTheDocument();
   });
 

@@ -20,7 +20,7 @@ async function CharactersPage({ searchParams }: PageProps) {
   const { page = 1, name } = await searchParams;
 
   return (
-    <div className="flex flex-col items-center h-full text-primary py-10 px-6 w-full max-w-screen-xl space-y-4">
+    <div className="flex flex-col items-center h-full text-primary py-2 px-6 w-full max-w-screen-xl space-y-4">
       <h1 className="text-4xl font-bold text-tertiary">Characters</h1>
 
       <form className="flex justify-center w-full">
