@@ -16,9 +16,9 @@
 <p align="center">
  <a href="#-about">About</a> •
  <a href="#%EF%B8%8F-features">Features</a> •
- <a href="#-layout">Layout</a> • 
  <a href="#-installing-and-running">Installing</a> • 
  <a href="#-libraries">Libraries</a> • 
+ <a href="#-layout">Layout</a> • 
  <a href="#-deploy">Deploy</a> • 
  <a href="#-scripts">Scripts</a> 
 </p>
@@ -56,30 +56,6 @@ The functional page can be accessed at: [https://sw-wiki-snowy.vercel.app/](http
 **Character Info Page**
 
 - Show information about a Character
-
-## 🎨 Layout
-
-### Screenshots
-#### Home
-![image](https://github.com/user-attachments/assets/589332a6-dc73-4ef1-a31f-ad7e193279af)
-![image](https://github.com/user-attachments/assets/bb86800f-6893-4d36-a9cd-db1335572081)
-
-
-
-#### Films
-![image](https://github.com/user-attachments/assets/5b1e1153-a366-4252-ad04-7a794ac75ea9)
-![image](https://github.com/user-attachments/assets/92169da3-d735-48cf-9d2e-3ceca0a3b109)
-
-#### Characters
-![image](https://github.com/user-attachments/assets/79b6ed01-2668-450b-a2b7-a8364350fd20)
-![image](https://github.com/user-attachments/assets/92ecd759-a3c5-436e-b98d-43979835df15)
-
-#### Characters Details
-![image](https://github.com/user-attachments/assets/53962009-f538-4cdd-9b65-9bfc31833efd)
-![image](https://github.com/user-attachments/assets/a0b50fd0-fc93-4793-800f-e88f9096cbe4)
-
-
----
 
 ## 🚗 Installing and Running
 
@@ -123,6 +99,30 @@ $ yarn run storybook
 # The application will be accessible as default on the port:3000 - access  http://localhost:6006/
 
 ```
+
+---
+
+## 🎨 Layout
+
+### Screenshots
+#### Home
+![image](https://github.com/user-attachments/assets/589332a6-dc73-4ef1-a31f-ad7e193279af)
+![image](https://github.com/user-attachments/assets/bb86800f-6893-4d36-a9cd-db1335572081)
+
+
+
+#### Films
+![image](https://github.com/user-attachments/assets/5b1e1153-a366-4252-ad04-7a794ac75ea9)
+![image](https://github.com/user-attachments/assets/92169da3-d735-48cf-9d2e-3ceca0a3b109)
+
+#### Characters
+![image](https://github.com/user-attachments/assets/79b6ed01-2668-450b-a2b7-a8364350fd20)
+![image](https://github.com/user-attachments/assets/92ecd759-a3c5-436e-b98d-43979835df15)
+
+#### Characters Details
+![image](https://github.com/user-attachments/assets/53962009-f538-4cdd-9b65-9bfc31833efd)
+![image](https://github.com/user-attachments/assets/a0b50fd0-fc93-4793-800f-e88f9096cbe4)
+
 
 ---
 
