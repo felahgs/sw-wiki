@@ -1,5 +1,6 @@
 import React from "react";
 import CharactersPagination from "./pagination";
+import CharacterCard from "@/components/CharacterCard";
 import { CharactersResponse } from "@/services/characters";
 
 interface CharactersListProps {
@@ -26,12 +27,11 @@ async function CharactersList({
       {characters && characters.length > 0 ? (
         <div className="flex flex-row flex-wrap justify-center gap-6 h-full w-full">
           {characters.map((character) => (
-            <div
+            <CharacterCard
               key={character.uid}
-              className="bg-gray-800 text-secondary p-4 rounded-md shadow hover:shadow-lg transition-shadow w-full md:w-52 "
-            >
-              <h2 className="text-xl font-semibold">{character.name}</h2>
-            </div>
+              name={character.name}
+              uid={character.uid}
+            />
           ))}
         </div>
       ) : (
