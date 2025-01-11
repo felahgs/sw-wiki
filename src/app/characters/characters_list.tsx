@@ -23,7 +23,7 @@ async function CharactersList({
     await charactersPromise(page, search);
 
   return (
-    <div className="flex flex-col justify-between h-full w-full">
+    <div className="flex flex-col grow justify-between h-full w-full">
       {characters && characters.length > 0 ? (
         <div className="flex flex-row flex-wrap justify-center gap-6 h-full w-full">
           {characters.map((character) => (

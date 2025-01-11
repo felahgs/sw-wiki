@@ -30,7 +30,7 @@ function Button({
   };
 
   const disabledClass = "opacity-50 cursor-not-allowed pointer-events-none";
-  const activeClass = "bg-cyan-700";
+  const activeClass = "bg-blue-400";
 
   return (
     <button
@@ -41,8 +41,8 @@ function Button({
         fluid && "w-full",
         disabled && disabledClass,
         loading && disabledClass,
-        active && activeClass,
-        className,
+        `${active ? "bg-cyan-700" : ""}`,
+        className
       )}
       {...rest}
     >

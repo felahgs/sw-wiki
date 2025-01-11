@@ -20,7 +20,7 @@ async function CharactersPage({ searchParams }: PageProps) {
   const { page = 1, name } = await searchParams;
 
   return (
-    <div className="flex flex-col items-center h-full text-primary py-2 px-6 w-full max-w-screen-xl space-y-4">
+    <div className="flex flex-col grow items-center h-full text-primary py-2 px-6 w-full max-w-screen-xl space-y-4">
       <h1 className="text-4xl font-bold text-tertiary">Characters</h1>
 
       <form className="flex justify-center w-full">
@@ -52,7 +52,7 @@ async function CharactersPage({ searchParams }: PageProps) {
         </div>
       )}
 
-      <div className="flex flex-col justify-between gap-8 h-full w-full">
+      <div className="flex flex-col grow justify-between gap-8 h-full w-full">
         <Suspense key={page} fallback={<Loading />}>
           <CharactersList
             page={page}
