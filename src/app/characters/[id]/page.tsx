@@ -34,6 +34,17 @@ async function CharactersPage({ params }: PageProps) {
     console.error("Error fetching planet:", error);
   }
 
+  const profileData = [
+    { label: "Height", value: `${height} cm` },
+    { label: "Mass", value: `${mass} kg` },
+    { label: "Hair Color", value: hair_color },
+    { label: "Skin Color", value: skin_color },
+    { label: "Eye Color", value: eye_color },
+    { label: "Birth Year", value: birth_year },
+    { label: "Gender", value: gender },
+    { label: "Homeworld", value: planetName },
+  ];
+
   return (
     <div className="flex flex-col items-center h-full text-primary py-10 px-6 w-full max-w-screen-xl space-y-8">
       <Link
@@ -46,7 +57,7 @@ async function CharactersPage({ params }: PageProps) {
         <h1 className="text-4xl font-bold text-tertiary">{name}</h1>
 
         <div className="flex flex-col md:flex-row items-center gap-8 bg-gray-800 p-6 rounded-md shadow-lg w-full max-w-4xl">
-          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-md overflow-hidden">
+          <div className="md:shrink-0 relative w-48 h-48 md:w-64 md:h-64 rounded-md overflow-hidden">
             <Image
               src={`/characters/${name}.jpg`}
               alt={name}
@@ -55,39 +66,13 @@ async function CharactersPage({ params }: PageProps) {
             />
           </div>
 
-          <div className="flex-1 space-y-4 text-secondary">
-            <p>
-              <span className="font-semibold text-gray-400">Height:</span>{" "}
-              {height} cm
-            </p>
-            <p>
-              <span className="font-semibold text-gray-400">Mass:</span> {mass}{" "}
-              kg
-            </p>
-            <p>
-              <span className="font-semibold text-gray-400">Hair Color:</span>{" "}
-              {hair_color}
-            </p>
-            <p>
-              <span className="font-semibold text-gray-400">Skin Color:</span>{" "}
-              {skin_color}
-            </p>
-            <p>
-              <span className="font-semibold text-gray-400">Eye Color:</span>{" "}
-              {eye_color}
-            </p>
-            <p>
-              <span className="font-semibold text-gray-400">Birth Year:</span>{" "}
-              {birth_year}
-            </p>
-            <p>
-              <span className="font-semibold text-gray-400">Gender:</span>{" "}
-              {gender}
-            </p>
-            <p>
-              <span className="font-semibold text-gray-400">Homeworld:</span>{" "}
-              {planetName}
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-secondary w-full">
+            {profileData.map(({ label, value }, index) => (
+              <p key={index} className="flex items-center">
+                <span className="font-semibold text-gray-400 pr-1">{`${label}:`}</span>
+                {value}
+              </p>
+            ))}
           </div>
         </div>
 
