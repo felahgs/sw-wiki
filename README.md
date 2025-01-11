@@ -25,8 +25,9 @@
 
 ## 💻 About
 
-A simple site using the [Star Wars API (SWAPI)](https://swapi.tech/). The goal is to create a simple multipage website with informations provided by the API.
-For this site I choose to focus on the use of Server Components with next-js with the goal to test this implementation on newer NextJS version (Pages Router) since the application would not make use of dynamic content fetching.
+This project is a simple website built using the Star Wars API (SWAPI), designed to provide information on various Star Wars entities. The objective is to create a multi-page website that dynamically fetches and displays data from the API.
+
+For this implementation, I’ve chosen to focus on using Server Components in Next.js, taking a opportunity to test more the capacities of the new App Router introduced in the recents Next.js version. The goal is to explore the capabilities of Server Components since the application won't use dynamic content fetching. The advantages of this approach is the possibility to deliver a full application to the client with the fetch content already ready from the server, improving the SEO. The downsides, as partially mentioned before, is that we have some limitation regarding the building dynamic content on the application, specially considering JavaScript heavy features such as Hooks. 
 
 The development was done using [React](https://react.dev/), [NextJS](https://nextjs.org/docs), [TypeScript](https://www.typescriptlang.org/) and [TawilwindJS](https://tailwindcss.com/).
 
@@ -46,15 +47,15 @@ The functional page can be accessed at: [https://sw-wiki-snowy.vercel.app/](http
 
 **Films Page**
 
-List some of the movies with a brief description of each
+- List some of the movies with a brief description of each
 
 **Characters Page**
 
-List a collection of characters with pagination allowing to filter and select one for more information
+- List a collection of characters with pagination allowing to filter and select one for more information
 
 **Character Info Page**
 
-Show information about a Character
+- Show information about a Character
 
 ## 🎨 Layout
 
