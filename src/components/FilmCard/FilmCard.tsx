@@ -17,12 +17,14 @@ function FilmCard({
   release_date,
   revertImage,
   className,
+  ...props
 }: FilmCardProps) {
   return (
     <div
       className={`flex flex-col items-center md:items-start ${
         revertImage ? "md:flex-row" : "md:flex-row-reverse"
       } gap-5 ${className}`}
+      {...props}
     >
       {image}
       <div>

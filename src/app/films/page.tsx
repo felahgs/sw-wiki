@@ -60,12 +60,12 @@ async function FilmsPage() {
           title={properties.title}
           image={
             <Image
-              width="150"
-              height="0"
-              priority
-              className="w-full h-auto max-w-[200]"
-              alt={properties.title}
               src={`/films/${properties.title}.jpg`}
+              alt={properties.title}
+              className="w-full h-auto max-w-[200]"
+              height="0"
+              width="150"
+              priority
             />
           }
           opening_crawl={properties.opening_crawl}

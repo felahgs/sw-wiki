@@ -20,7 +20,7 @@ export default function RootTemplate({
     <html lang="en">
       <body className="bg-background text-primary">
         <LayoutHeader />
-        <div className="flex flex-col justify-center grow w-full ">
+        <div className="flex flex-col items-center justify-center grow w-full">
           {children}
         </div>
         <LayoutFooter />
