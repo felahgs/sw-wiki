@@ -29,7 +29,7 @@ This project is a simple website built using the Star Wars API (SWAPI), designed
 
 For this implementation, I’ve chosen to focus on using Server Components in Next.js, taking a opportunity to test more the capacities of the new App Router introduced in the recents Next.js version. The goal is to explore the capabilities of Server Components since the application won't use dynamic content fetching. The advantages of this approach is the possibility to deliver a full application to the client with the fetch content already ready from the server, improving the SEO. The downsides, as partially mentioned before, is that we have some limitation regarding the building dynamic content on the application, specially considering JavaScript heavy features such as Hooks. 
 
-The development was done using [React](https://react.dev/), [NextJS](https://nextjs.org/docs), [TypeScript](https://www.typescriptlang.org/) and [TawilwindJS](https://tailwindcss.com/).
+The development was done using [React](https://react.dev/), [NextJS](https://nextjs.org/docs), [TypeScript](https://www.typescriptlang.org/) and [TailwindCSS](https://tailwindcss.com/).
 
 Code quality tools like ESLint and Prettier have been integrated, along with Husky to enforce pre-commit and pre-push checks. These checks ensure compliance with formatting rules, verify package versions, validate test consistency, and identify vulnerable dependencies.
 
