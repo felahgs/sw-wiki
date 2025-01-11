@@ -1,8 +1,9 @@
-import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
-import FilmsPage from "../page";
+
 import { listFilms } from "@/services/films";
 import { films } from "@/utils/mocks";
+
+import FilmsPage from "../page";
 
 jest.mock("@/services/films", () => ({
   listFilms: jest.fn(),

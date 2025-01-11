@@ -57,6 +57,7 @@ export const films = {
   result: [
     {
       _id: 1,
+      uid: 1,
       properties: {
         url: "1",
         title: "The Empire Strikes Back",
@@ -65,6 +66,7 @@ export const films = {
     },
     {
       _id: 2,
+      uid: 2,
       properties: {
         url: "2",
         title: "A New Hope",
