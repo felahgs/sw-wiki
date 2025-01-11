@@ -60,9 +60,8 @@ async function FilmsPage() {
           title={properties.title}
           image={
             <Image
-              width="0"
+              width="150"
               height="0"
-              sizes="100vw"
               priority
               className="w-full h-auto max-w-[200]"
               alt={properties.title}
