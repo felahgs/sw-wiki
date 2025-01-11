@@ -1,4 +1,4 @@
-import React, { FormEvent, FormEventHandler, Suspense } from "react";
+import React, { Suspense } from "react";
 import { redirect } from "next/navigation";
 
 import { listCharacters } from "@/services/characters";

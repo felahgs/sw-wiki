@@ -18,14 +18,12 @@ describe("Pagination Component", () => {
       />,
     );
 
-    // Check that page numbers are rendered correctly
     expect(screen.getByText("1")).toBeInTheDocument();
     expect(screen.getByText("2")).toBeInTheDocument();
     expect(screen.getByText("3")).toBeInTheDocument();
     expect(screen.getByText("4")).toBeInTheDocument();
     expect(screen.getByText("5")).toBeInTheDocument();
 
-    // Check Prev and Next buttons
     expect(screen.getByLabelText("Go to previous page")).toBeEnabled();
     expect(screen.getByLabelText("Go to next page")).toBeEnabled();
   });
@@ -39,12 +37,10 @@ describe("Pagination Component", () => {
       />,
     );
 
-    // For totalPages <= 5, all pages should be visible.
     expect(screen.getByText("1")).toBeInTheDocument();
     expect(screen.getByText("2")).toBeInTheDocument();
     expect(screen.getByText("3")).toBeInTheDocument();
 
-    // Prev and Next buttons should also be functional.
     expect(screen.getByLabelText("Go to previous page")).toBeEnabled();
     expect(screen.getByLabelText("Go to next page")).toBeEnabled();
   });
@@ -58,7 +54,6 @@ describe("Pagination Component", () => {
       />,
     );
 
-    // Expect the pagination to show: [1, 2, 3, '...', totalPages]
     expect(screen.getByText("1")).toBeInTheDocument();
     expect(screen.getByText("2")).toBeInTheDocument();
     expect(screen.getByText("3")).toBeInTheDocument();
@@ -149,7 +144,7 @@ describe("Pagination Component", () => {
     const nextButton = screen.getByLabelText("Go to next page");
     fireEvent.click(nextButton);
 
-    expect(mockOnPageChange).toHaveBeenCalledWith(2); // Moves to the next page
+    expect(mockOnPageChange).toHaveBeenCalledWith(2);
   });
 
   test("does not call onPageChange when Next button is disabled (on last page)", () => {

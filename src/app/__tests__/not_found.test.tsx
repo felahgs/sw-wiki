@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import NotFound from "../not-found"; // Adjust import according to your file structure
+import NotFound from "../not-found";
 import "@testing-library/jest-dom";
 
 describe("NotFound Component", () => {

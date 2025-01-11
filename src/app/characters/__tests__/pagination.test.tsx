@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import CharactersPagination from "../pagination";
 import { useRouter } from "next/navigation";
 
-// Mock the useRouter hook
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
 }));

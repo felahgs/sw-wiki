@@ -1,10 +1,10 @@
 import React from "react";
+
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Link from "./CustomLink"; // Adjust the import path as needed
-import NextLink from "next/link";
 
-// Mock NextLink because it's used internally
+import Link from "./CustomLink";
+
 jest.mock("next/link", () => ({
   __esModule: true,
   default: ({ children, ...props }: any) => <a {...props}>{children}</a>,
@@ -26,7 +26,7 @@ describe("Link Component", () => {
     const link = screen.getByText("Click me");
     expect(link).toHaveClass("hover:underline");
     expect(link).toHaveClass("custom-class");
-    expect(link).toHaveClass("text-tertiary"); // Active class should be applied
+    expect(link).toHaveClass("text-tertiary");
   });
 
   it("does not apply the active class if active is not passed", () => {

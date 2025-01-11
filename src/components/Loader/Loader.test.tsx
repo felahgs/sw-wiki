@@ -1,4 +1,3 @@
-// Loader.test.js
 import { render, screen } from "@testing-library/react";
 import Loader from "./Loader";
 

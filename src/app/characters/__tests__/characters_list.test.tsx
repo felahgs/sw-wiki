@@ -3,7 +3,6 @@ import CharactersList from "../characters_list";
 import { CharactersResponse } from "@/services/characters";
 import { characterList } from "@/utils/mocks";
 
-// Mocked characters data
 const mockCharactersResponse: CharactersResponse = {
   results: characterList,
   total_pages: 5,
@@ -33,7 +32,7 @@ describe("CharactersList", () => {
     expect(await screen.findByText("Darth Vader")).toBeInTheDocument();
   });
 
-  it("calls charactersPromise with the correct page number", async () => {
+  it("calls charactersPromise with the correct page number and without search string", async () => {
     render(
       await CharactersList({
         charactersPromise: mockCharactersPromise,
@@ -41,7 +40,23 @@ describe("CharactersList", () => {
       }),
     );
 
-    await waitFor(() => expect(mockCharactersPromise).toHaveBeenCalledWith(2));
+    await waitFor(() =>
+      expect(mockCharactersPromise).toHaveBeenCalledWith(2, undefined),
+    );
+  });
+
+  it("calls charactersPromise with the correct search stirng", async () => {
+    render(
+      await CharactersList({
+        charactersPromise: mockCharactersPromise,
+        page: 2,
+        search: "Skywalker",
+      }),
+    );
+
+    await waitFor(() =>
+      expect(mockCharactersPromise).toHaveBeenCalledWith(2, "Skywalker"),
+    );
   });
 
   it("calls charactersPromise with the first page when the prop is not provided", async () => {
@@ -51,7 +66,9 @@ describe("CharactersList", () => {
       }),
     );
 
-    await waitFor(() => expect(mockCharactersPromise).toHaveBeenCalledWith(1));
+    await waitFor(() =>
+      expect(mockCharactersPromise).toHaveBeenCalledWith(1, undefined),
+    );
   });
 
   it("displays no characters if the response has no results", async () => {
