@@ -14,14 +14,14 @@ function LayoutHeader() {
         Films
       </Link>,
       <Link
-        active={pathname === "/characters"}
+        active={pathname.includes("/characters")}
         key="characters"
         href="/characters"
       >
         Characters
       </Link>,
     ],
-    [pathname]
+    [pathname],
   );
 
   return (

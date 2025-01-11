@@ -20,8 +20,6 @@ async function CharactersList({
   const { results: characters, total_pages: totalPages } =
     await charactersPromise(page, search);
 
-  console.log("total_pages", totalPages);
-
   return (
     <div className="flex flex-col justify-between h-full w-full">
       {characters && characters.length > 0 ? (

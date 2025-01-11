@@ -6,7 +6,7 @@ export interface QueryParams {
   name?: string;
 }
 
-interface Character {
+interface Planet {
   _id: string;
   uid: string;
   properties: CharacterProperties;
@@ -14,23 +14,23 @@ interface Character {
 }
 
 interface CharacterProperties {
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  birth_year: string;
-  gender: string;
+  diameter: string;
+  rotation_period: string;
+  orbital_period: string;
+  gravity: string;
+  population: string;
+  climate: string;
+  terrain: string;
+  surface_water: string;
   created: string;
   edited: string;
   name: string;
-  homeworld: string;
   url: string;
 }
 
-export interface CharactersResponse {
+export interface PlanetsResponse {
   message?: string;
-  result?: Character[];
+  result?: Planet[];
   results: {
     uid: string;
     name: string;
@@ -42,26 +42,26 @@ export interface CharactersResponse {
   total_records: number;
 }
 
-export interface CharacterResponse {
+export interface PlanetResponse {
   message?: string;
-  result: Character;
+  result: Planet;
 }
 
 export async function listCharacters(
   queryParams?: QueryParams,
-): Promise<CharactersResponse> {
+): Promise<PlanetsResponse> {
   try {
     const queryString = `?page=${queryParams?.page ?? "1"}&limit=${queryParams?.limit ?? 10}&name=${queryParams?.name || ""}`;
-    const response = await apiClient.get(`/people${queryString}`);
+    const response = await apiClient.get(`/planets${queryString}`);
 
     const { result, results, ...rest } = response.data;
 
     const searcheResult =
       result &&
-      result.map((character: Character) => ({
-        uid: character.uid,
-        name: character.properties.name,
-        url: character.properties.url,
+      result.map((planet: Planet) => ({
+        uid: planet.uid,
+        name: planet.properties.name,
+        url: planet.properties.url,
       }));
 
     const formattedResponse = {
@@ -72,19 +72,20 @@ export async function listCharacters(
     return formattedResponse;
   } catch (error) {
     console.log("error", error);
-    throw new Error("Failed to fetch characters", error as Error);
+    throw new Error("Failed to fetch planets", error as Error);
   }
 }
 
 export async function getCharacter(
   id: number | string,
-): Promise<CharacterResponse> {
+): Promise<PlanetResponse> {
   try {
-    const response = await apiClient.get(`/people/${id}`);
+    console.log("id", id);
+    const response = await apiClient.get(`/planets/${id}`);
 
     return response.data;
   } catch (error) {
     console.log("error", error);
-    throw new Error("Failed to fetch the character", error as Error);
+    throw new Error("Failed to fetch the planet", error as Error);
   }
 }

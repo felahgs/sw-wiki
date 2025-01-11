@@ -1,6 +1,7 @@
-import { listFilms } from "@/services/films";
 import React from "react";
 import Image from "next/image";
+
+import { listFilms } from "@/services/films";
 import FilmCard from "@/components/FilmCard";
 
 async function FilmsPage() {
