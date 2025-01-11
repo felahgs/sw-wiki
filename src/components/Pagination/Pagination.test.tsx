@@ -9,7 +9,7 @@ describe("Pagination Component", () => {
     jest.clearAllMocks();
   });
 
-  test("renders Pagination with correct buttons and page numbers", () => {
+  test("should render Pagination with correct buttons and page numbers", () => {
     render(
       <Pagination
         currentPage={3}
@@ -28,7 +28,24 @@ describe("Pagination Component", () => {
     expect(screen.getByLabelText("Go to next page")).toBeEnabled();
   });
 
-  test("renders pagination correctly when totalPages <= 5 (line 24)", () => {
+  test("should not render if total page is 0", () => {
+    render(
+      <Pagination
+        currentPage={3}
+        totalPages={0}
+        onPageChange={mockOnPageChange}
+      />,
+    );
+
+    expect(screen.queryByText("1")).not.toBeInTheDocument();
+
+    expect(
+      screen.queryByLabelText("Go to previous page"),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Go to next page")).not.toBeInTheDocument();
+  });
+
+  test("should render pagination correctly when totalPages <= 5 (line 24)", () => {
     render(
       <Pagination
         currentPage={2}
@@ -45,7 +62,7 @@ describe("Pagination Component", () => {
     expect(screen.getByLabelText("Go to next page")).toBeEnabled();
   });
 
-  test("renders pagination correctly when currentPage <= 3 (line 42)", () => {
+  test("should render pagination correctly when currentPage <= 3 (line 42)", () => {
     render(
       <Pagination
         currentPage={2}
@@ -117,7 +134,7 @@ describe("Pagination Component", () => {
     expect(nextButton).toBeDisabled();
   });
 
-  test("renders ellipsis and pages correctly when there are more than 5 pages", () => {
+  test("should render ellipsis and pages correctly when there are more than 5 pages", () => {
     render(
       <Pagination
         currentPage={6}
@@ -177,7 +194,7 @@ describe("Pagination Component", () => {
     expect(mockOnPageChange).not.toHaveBeenCalled();
   });
 
-  test("renders pagination correctly when currentPage is the second to last page", () => {
+  test("should render pagination correctly when currentPage is the second to last page", () => {
     render(
       <Pagination
         currentPage={9}
