@@ -2,6 +2,8 @@ import React from "react";
 import CharactersPagination from "./pagination";
 import CharacterCard from "@/components/CharacterCard";
 import { CharactersResponse } from "@/services/characters";
+import Link from "next/link";
+import Image from "next/image";
 
 interface CharactersListProps {
   charactersPromise: (
@@ -25,11 +27,28 @@ async function CharactersList({
       {characters && characters.length > 0 ? (
         <div className="flex flex-row flex-wrap justify-center gap-6 h-full w-full">
           {characters.map((character) => (
-            <CharacterCard
+            <Link
               key={character.uid}
-              name={character.name}
-              uid={character.uid}
-            />
+              aria-label={`${character.name} details page`}
+              href={`/characters/${character.uid}`}
+              className="flex-shrink-0 grow-0 w-full md:w-auto"
+              passHref
+            >
+              <CharacterCard
+                name={character.name}
+                uid={character.uid}
+                image={
+                  <Image
+                    src={`/characters/${character.name}.jpg`}
+                    alt={character.name}
+                    fill
+                    sizes="100%"
+                    priority
+                    className="rounded-t-md object-cover"
+                  />
+                }
+              />
+            </Link>
           ))}
         </div>
       ) : (

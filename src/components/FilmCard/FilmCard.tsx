@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
-interface FilmCardProps {
+interface FilmCardProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   image: ReactNode;
   opening_crawl: string;
@@ -16,12 +16,13 @@ function FilmCard({
   director,
   release_date,
   revertImage,
+  className,
 }: FilmCardProps) {
   return (
     <div
       className={`flex flex-col items-center md:items-start ${
         revertImage ? "md:flex-row" : "md:flex-row-reverse"
-      } gap-5`}
+      } gap-5 ${className}`}
     >
       {image}
       <div>

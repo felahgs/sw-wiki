@@ -13,12 +13,16 @@ async function FilmsPage() {
       <h1 className="text-4xl font-bold text-tertiary">Films</h1>
       {films.map(({ _id, properties }, index) => (
         <FilmCard
+          className="shrink-0"
           key={_id}
           title={properties.title}
           image={
             <Image
-              width={200}
-              height={200}
+              width="0"
+              height="0"
+              sizes="100vw"
+              priority
+              className="w-full h-auto max-w-[200]"
               alt={properties.title}
               src={`/films/${properties.title}.jpg`}
             />

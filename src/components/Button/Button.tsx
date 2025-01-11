@@ -30,17 +30,18 @@ function Button({
   };
 
   const disabledClass = "opacity-50 cursor-not-allowed pointer-events-none";
+  const activeClass = "bg-cyan-700";
 
   return (
     <button
       disabled={disabled || loading}
       className={clsx(
-        `bg-zinc-600 rounded-lg font-bold border trasition-all duration-200 ease-in-out hover:bg-cyan-600 active:bg-cyan-700 `,
         variantClass[variant],
+        `bg-zinc-600 rounded-lg font-bold border trasition-all duration-200 ease-in-out hover:bg-cyan-600 active:bg-cyan-700 `,
         fluid && "w-full",
         disabled && disabledClass,
         loading && disabledClass,
-        active && "bg-cyan-800",
+        active && activeClass,
         className,
       )}
       {...rest}
