@@ -1,4 +1,3 @@
-import { Primary } from "@/components/Button/Button.stories";
 import { title } from "process";
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";

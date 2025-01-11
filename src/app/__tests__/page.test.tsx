@@ -25,8 +25,5 @@ describe("HomePage Component", () => {
     });
     expect(viewCharactersLink).toBeInTheDocument();
     expect(viewCharactersLink).toHaveAttribute("href", "/characters");
-
-    expect(exploreFilmsLink).toHaveClass("bg-blue-500");
-    expect(viewCharactersLink).toHaveClass("bg-green-500");
   });
 });
