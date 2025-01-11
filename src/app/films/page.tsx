@@ -55,7 +55,7 @@ async function FilmsPage() {
       {films.map(({ _id, properties }, index) => (
         <FilmCard
           id={properties.title.replaceAll(" ", "_")}
-          className="shrink-0 scroll-mt-20"
+          className="shrink-0 scroll-mt-20 z-10"
           key={_id}
           title={properties.title}
           image={
@@ -76,10 +76,10 @@ async function FilmsPage() {
         />
       ))}
       <div>
-        <div className="flex flex-col items-center justify-end pb-2 absolute left-0 w-full bottom-0  h-[calc(100%-100vh)]">
+        <div className="flex flex-col items-center select-none justify-end pb-2 absolute left-0 w-full bottom-0  h-[calc(100%-100vh)]">
           <Link
             id="back_to_top"
-            className="text-secondary h-[fit-content] bg-background  p-1 rounded-lg sticky bottom-1"
+            className="text-secondary h-[fit-content] bg-background  p-1 rounded-lg sticky bottom-1 z-10"
             href="#page_title"
           >
             Back to top
