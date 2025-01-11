@@ -25,6 +25,7 @@ describe("CharactersPage", () => {
   beforeEach(() => {
     mockedGetCharacter.mockResolvedValue(mockCharacterData);
     mockedAxios.mockResolvedValue(mockPlanetData);
+    jest.spyOn(console, "error").mockImplementation(() => {});
   });
 
   afterEach(() => {
@@ -66,7 +67,7 @@ describe("CharactersPage", () => {
   });
 
   it("handles API errors gracefully", async () => {
-    mockedAxios.mockRejectedValueOnce(new Error("Network Error"));
+    mockedAxios.mockRejectedValueOnce("Network Error");
 
     render(await CharactersPage({ params: Promise.resolve(mockParams) }));
 

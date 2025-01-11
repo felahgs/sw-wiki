@@ -15,7 +15,7 @@ jest.mock("../characters_list", () =>
 
 const mockCharactersResponse: CharactersResponse = {
   results: characterList,
-  total_pages: 5,
+  total_pages: 1,
   total_records: 2,
 };
 
