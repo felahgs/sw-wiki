@@ -10,24 +10,8 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {
-    variant: "primary",
-  },
-  render: (args) => <Button {...args}>Button</Button>,
-};
-
-export const Secondary: Story = {
-  args: {
-    variant: "secondary",
-  },
-  render: (args) => <Button {...args}>Button</Button>,
-};
-
-export const Text: Story = {
-  args: {
-    variant: "text",
-  },
+export const Default: Story = {
+  args: {},
   render: (args) => <Button {...args}>Button</Button>,
 };
 

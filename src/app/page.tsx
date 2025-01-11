@@ -14,13 +14,13 @@ export default async function HomePage() {
         <div className="space-x-4">
           <Link
             href={"/films"}
-            className="bg-blue-500 text-primary py-2 px-4 rounded-md text-lg font-semibold hover:bg-blue-600"
+            className=" text-primary py-2 px-4 rounded-md text-lg font-semibold hover:bg-cyan-700"
           >
             Explore Films
           </Link>
           <Link
             href={"/characters"}
-            className="bg-green-500 text-primary py-2 px-4 rounded-md text-lg font-semibold hover:bg-green-600"
+            className=" text-primary py-2 px-4 rounded-md text-lg font-semibold hover:bg-cyan-700"
           >
             View Characters
           </Link>
