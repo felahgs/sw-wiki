@@ -53,7 +53,7 @@ async function CharactersPage({ params }: PageProps) {
       >
         ← Go Back
       </Link>
-      <div className="flex flex-col items-center h-full text-primary py-10 px-6 w-full max-w-screen-xl space-y-8">
+      <div className="flex flex-col items-center h-full text-primary w-full max-w-screen-xl space-y-2">
         <h1 className="text-4xl font-bold text-tertiary">{name}</h1>
 
         <div className="flex flex-col md:flex-row items-center gap-8 bg-gray-800 p-6 rounded-md shadow-lg w-full max-w-4xl">
