@@ -8,7 +8,7 @@ describe("Select", () => {
       <Select>
         <option value="opt 1">Opt 1</option>
         <option value="opt 2">Opt 2</option>
-      </Select>,
+      </Select>
     );
 
     const selectElement = screen.getByRole("combobox");
@@ -26,7 +26,7 @@ describe("Select", () => {
       <Select>
         <option value="opt 1">Opt 1</option>
         <option value="opt 2">Opt 2</option>
-      </Select>,
+      </Select>
     );
 
     const selectElement = screen.getByRole("combobox") as HTMLSelectElement;

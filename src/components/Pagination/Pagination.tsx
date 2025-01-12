@@ -72,7 +72,7 @@ const Pagination: React.FC<PaginationProps> = ({
             <li key={`ellipsis-${index}`}>
               <span className="px-3 py-1 text-gray-500 select-none">...</span>
             </li>
-          ),
+          )
         )}
         <li>
           <Button

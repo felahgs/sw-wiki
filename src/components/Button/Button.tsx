@@ -33,7 +33,7 @@ function Button({
         disabled && disabledClass,
         loading && disabledClass,
         active && activeClass,
-        className,
+        className
       )}
       {...rest}
     >

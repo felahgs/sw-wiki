@@ -27,7 +27,7 @@ describe("Button", () => {
     render(
       <Button disabled onClick={mockedOnClick}>
         Button
-      </Button>,
+      </Button>
     );
 
     const button = screen.getByRole("button", { name: "Button" });
@@ -49,7 +49,7 @@ describe("Button", () => {
     render(
       <Button loading onClick={mockedOnClick}>
         Button
-      </Button>,
+      </Button>
     );
 
     const button = screen.getByRole("button");

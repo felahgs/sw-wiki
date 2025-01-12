@@ -10,8 +10,8 @@ describe("HomePage Component", () => {
 
     expect(
       screen.getByText(
-        /Dive into a galaxy far, far away and discover about your favorite films and characters./i,
-      ),
+        /Dive into a galaxy far, far away and discover about your favorite films and characters./i
+      )
     ).toBeInTheDocument();
 
     const exploreFilmsLink = screen.getByRole("link", {

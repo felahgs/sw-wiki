@@ -85,7 +85,7 @@ describe("listPlanets", () => {
     (apiClient.get as jest.Mock).mockRejectedValue(new Error("Network Error"));
 
     await expect(listPlanets({ page: 1 })).rejects.toThrow(
-      "Failed to fetch planets",
+      "Failed to fetch planets"
     );
   });
 });

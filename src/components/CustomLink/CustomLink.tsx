@@ -15,7 +15,7 @@ function Link({ children, className, active, ...props }: CustomLinkProps) {
       className={clsx(
         "hover:underline",
         className,
-        active && "text-tertiary active",
+        active && "text-tertiary active"
       )}
       {...props}
     >

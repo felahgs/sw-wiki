@@ -48,7 +48,7 @@ export interface PlanetResponse {
 }
 
 export async function listPlanets(
-  queryParams?: QueryParams,
+  queryParams?: QueryParams
 ): Promise<PlanetsResponse> {
   try {
     const queryString = `?page=${queryParams?.page ?? "1"}&limit=${queryParams?.limit ?? 10}&name=${queryParams?.name || ""}`;

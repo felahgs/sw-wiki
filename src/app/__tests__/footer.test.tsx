@@ -7,11 +7,11 @@ describe("LayoutFooter", () => {
 
     expect(
       screen.getByText(
-        /Star Wars and all related names, images, and characters are copyright/i,
-      ),
+        /Star Wars and all related names, images, and characters are copyright/i
+      )
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/This is a fan-made application and is not affiliated/i),
+      screen.getByText(/This is a fan-made application and is not affiliated/i)
     ).toBeInTheDocument();
 
     const swapiLink = screen.getByRole("link", {
@@ -26,7 +26,7 @@ describe("LayoutFooter", () => {
 
     const year = new Date().getFullYear().toString();
     expect(
-      screen.getByText(`© ${year} Galaxy Wiki. All rights reserved.`),
+      screen.getByText(`© ${year} Galaxy Wiki. All rights reserved.`)
     ).toBeInTheDocument();
   });
 });
