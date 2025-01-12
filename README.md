@@ -27,13 +27,13 @@
 
 This project is a simple website built using the Star Wars API (SWAPI), designed to provide information on various Star Wars entities. The objective is to create a multi-page website that dynamically fetches and displays data from the API.
 
-For this implementation, I’ve chosen to focus on using Server Components in Next.js, taking a opportunity to test more the capacities of the new App Router introduced in the recents Next.js version. The goal is to explore the capabilities of Server Components since the application won't use dynamic content fetching. The advantages of this approach is the possibility to deliver a full application to the client with the fetch content already ready from the server, improving the SEO. The downsides, as partially mentioned before, is that we have some limitation regarding the building dynamic content on the application, specially considering JavaScript heavy features such as Hooks. 
+For this implementation, I’ve chosen to focus on using Server Components in Next.js, taking a opportunity to test more the capacities of the new App Router introduced in the recents Next.js version. The goal is to explore the capabilities of Server Components since the application won't use dynamic content fetching. The advantages of this approach is the possibility to deliver a full application to the client with the fetch content already ready from the server, improving the SEO. The downsides, as partially mentioned before, is that we have some limitation regarding the building dynamic content on the application, specially considering JavaScript heavy features such as Hooks.
 
 The development was done using [React](https://react.dev/), [NextJS](https://nextjs.org/docs), [TypeScript](https://www.typescriptlang.org/) and [TailwindCSS](https://tailwindcss.com/).
 
 Code quality tools like ESLint and Prettier have been integrated, along with Husky to enforce pre-commit and pre-push checks. These checks ensure compliance with formatting rules, verify package versions, validate test consistency, and identify vulnerable dependencies.
 
-The project includes [Storybook](https://storybook.js.org/) for inspecting each component in the application and understanding how they function.  
+The project includes [Storybook](https://storybook.js.org/) for inspecting each component in the application and understanding how they function.
 
 The functional page can be accessed at: [https://sw-wiki-snowy.vercel.app/](https://sw-wiki-snowy.vercel.app/)
 
@@ -64,7 +64,7 @@ The functional page can be accessed at: [https://sw-wiki-snowy.vercel.app/](http
 First of all be certain to have the following applications installed.
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable).
 
-#### ▶️ Running application 
+#### ▶️ Running application
 
 ```bash
 
@@ -85,7 +85,6 @@ $ yarn dev
 
 #### 🧭 Starting Storybook
 
-
 ```bash
 
 $ git clone git@github.com:felahgs/sw-wiki.git
@@ -105,33 +104,35 @@ $ yarn run storybook
 ## 🎨 Layout
 
 ### Screenshots
+
 #### Home
+
 ![image](https://github.com/user-attachments/assets/589332a6-dc73-4ef1-a31f-ad7e193279af)
 ![image](https://github.com/user-attachments/assets/bb86800f-6893-4d36-a9cd-db1335572081)
 
-
-
 #### Films
+
 ![image](https://github.com/user-attachments/assets/5b1e1153-a366-4252-ad04-7a794ac75ea9)
 ![image](https://github.com/user-attachments/assets/92169da3-d735-48cf-9d2e-3ceca0a3b109)
 
 #### Characters
+
 ![image](https://github.com/user-attachments/assets/79b6ed01-2668-450b-a2b7-a8364350fd20)
 ![image](https://github.com/user-attachments/assets/92ecd759-a3c5-436e-b98d-43979835df15)
 
 #### Characters Details
+
 ![image](https://github.com/user-attachments/assets/53962009-f538-4cdd-9b65-9bfc31833efd)
 ![image](https://github.com/user-attachments/assets/a0b50fd0-fc93-4793-800f-e88f9096cbe4)
-
 
 ---
 
 ## 📚 Libraries
 
 - [Jest](https://jestjs.io/pt-BR/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) Creation of unity tests.
-- [axios](https://axios-http.com/ptbr/docs/intro)  HTTP Client.
-- [tailwind](https://tailwindcss.com/)  Styling.
-- [clsx](https://www.npmjs.com/package/clsx)  Class name constructors.
+- [axios](https://axios-http.com/ptbr/docs/intro) HTTP Client.
+- [tailwind](https://tailwindcss.com/) Styling.
+- [clsx](https://www.npmjs.com/package/clsx) Class name constructors.
   ***
 
 ## 🚀 Deploy

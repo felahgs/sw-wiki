@@ -20,7 +20,7 @@ jest.mock("../characters_list", () =>
         trigger
       </button>
     </div>
-  )),
+  ))
 );
 
 const mockCharactersResponse: CharactersResponse = {
@@ -43,11 +43,11 @@ describe("CharactersPage", () => {
     expect(await screen.findByText("Characters")).toBeInTheDocument();
 
     expect(
-      screen.getByPlaceholderText("Search characters..."),
+      screen.getByPlaceholderText("Search characters...")
     ).toBeInTheDocument();
 
     expect(
-      await screen.findByText("Mocked Characters List"),
+      await screen.findByText("Mocked Characters List")
     ).toBeInTheDocument();
   });
 

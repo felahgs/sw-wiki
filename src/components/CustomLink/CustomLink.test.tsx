@@ -20,7 +20,7 @@ describe("Link Component", () => {
     render(
       <Link href="/test" className="custom-class" active>
         Click me
-      </Link>,
+      </Link>
     );
 
     const link = screen.getByText("Click me");

@@ -86,7 +86,7 @@ describe("CharactersPage", () => {
     });
 
     expect(
-      screen.getByText("A person within the Star Wars universe"),
+      screen.getByText("A person within the Star Wars universe")
     ).toBeInTheDocument();
   });
 
