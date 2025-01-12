@@ -25,19 +25,13 @@ jobs:
         with:
           path: |
             node_modules
-            ~/.yarn/cache 
+            ~/.yarn/cache
           key: node-modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             node-modules-${{ runner.os }}-
 
       - name: Install dependencies
         run: yarn install
-
-      - name: Save node_modules as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: node_modules
-          path: node_modules
 
   lint_and_format:
     runs-on: ubuntu-latest
@@ -46,10 +40,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Download dependencies artifact
-        uses: actions/download-artifact@v3
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
         with:
-          name: node_modules
+          path: |
+            node_modules
+            ~/.yarn/cache
+          key: node-modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-modules-${{ runner.os }}-
 
       - name: Run Prettier
         run: yarn prettier --check .
@@ -64,10 +63,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Download dependencies artifact
-        uses: actions/download-artifact@v3
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
         with:
-          name: node_modules
+          path: |
+            node_modules
+            ~/.yarn/cache
+          key: node-modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-modules-${{ runner.os }}-
 
       - name: Run TypeScript Compilation (tsc)
         run: npx tsc --noEmit
@@ -77,12 +81,17 @@ jobs:
     needs: install_dependencies
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3 
+        uses: actions/checkout@v3
 
-      - name: Download dependencies artifact
-        uses: actions/download-artifact@v3
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
         with:
-          name: node_modules
+          path: |
+            node_modules
+            ~/.yarn/cache
+          key: node-modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-modules-${{ runner.os }}-
 
       - name: Run audit
         run: yarn audit --production
@@ -92,12 +101,17 @@ jobs:
     needs: install_dependencies
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  
+        uses: actions/checkout@v3
 
-      - name: Download dependencies artifact
-        uses: actions/download-artifact@v3
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
         with:
-          name: node_modules
+          path: |
+            node_modules
+            ~/.yarn/cache
+          key: node-modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-modules-${{ runner.os }}-
 
       - name: Check outdated dependencies
         run: yarn check-outdated || echo "No outdated dependencies found"
@@ -108,12 +122,17 @@ jobs:
     needs: [lint_and_format, tsc_check]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  
+        uses: actions/checkout@v3
 
-      - name: Download dependencies artifact
-        uses: actions/download-artifact@v3
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
         with:
-          name: node_modules
+          path: |
+            node_modules
+            ~/.yarn/cache
+          key: node-modules-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            node-modules-${{ runner.os }}-
 
       - name: Run tests with coverage
         run: yarn test
