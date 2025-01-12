@@ -23,7 +23,7 @@ describe("CharactersList", () => {
       await CharactersList({
         charactersPromise: mockCharactersPromise,
         page: 1,
-      }),
+      })
     );
 
     expect(screen.queryByText("Loading...")).toBeNull();
@@ -37,11 +37,11 @@ describe("CharactersList", () => {
       await CharactersList({
         charactersPromise: mockCharactersPromise,
         page: 2,
-      }),
+      })
     );
 
     await waitFor(() =>
-      expect(mockCharactersPromise).toHaveBeenCalledWith(2, undefined),
+      expect(mockCharactersPromise).toHaveBeenCalledWith(2, undefined)
     );
   });
 
@@ -51,11 +51,11 @@ describe("CharactersList", () => {
         charactersPromise: mockCharactersPromise,
         page: 2,
         search: "Skywalker",
-      }),
+      })
     );
 
     await waitFor(() =>
-      expect(mockCharactersPromise).toHaveBeenCalledWith(2, "Skywalker"),
+      expect(mockCharactersPromise).toHaveBeenCalledWith(2, "Skywalker")
     );
   });
 
@@ -63,11 +63,11 @@ describe("CharactersList", () => {
     render(
       await CharactersList({
         charactersPromise: mockCharactersPromise,
-      }),
+      })
     );
 
     await waitFor(() =>
-      expect(mockCharactersPromise).toHaveBeenCalledWith(1, undefined),
+      expect(mockCharactersPromise).toHaveBeenCalledWith(1, undefined)
     );
   });
 
@@ -83,11 +83,11 @@ describe("CharactersList", () => {
       await CharactersList({
         charactersPromise: emptyMock,
         page: 1,
-      }),
+      })
     );
 
     await waitFor(() =>
-      expect(screen.queryByText("Luke Skywalker")).not.toBeInTheDocument(),
+      expect(screen.queryByText("Luke Skywalker")).not.toBeInTheDocument()
     );
   });
 });

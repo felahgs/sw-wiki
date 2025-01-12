@@ -29,7 +29,7 @@ describe("FilmsPage", () => {
     render(await FilmsPage());
 
     expect(
-      screen.queryByText("The Empire Strikes Back"),
+      screen.queryByText("The Empire Strikes Back")
     ).not.toBeInTheDocument();
     expect(screen.queryByText("A New Hope")).not.toBeInTheDocument();
   });

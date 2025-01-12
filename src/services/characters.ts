@@ -48,7 +48,7 @@ export interface CharacterResponse {
 }
 
 export async function listCharacters(
-  queryParams?: QueryParams,
+  queryParams?: QueryParams
 ): Promise<CharactersResponse> {
   try {
     const queryString = `?page=${queryParams?.page ?? "1"}&limit=${queryParams?.limit ?? 10}&name=${queryParams?.name || ""}`;
@@ -77,7 +77,7 @@ export async function listCharacters(
 }
 
 export async function getCharacter(
-  id: number | string,
+  id: number | string
 ): Promise<CharacterResponse> {
   try {
     const response = await apiClient.get(`/people/${id}`);

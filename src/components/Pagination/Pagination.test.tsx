@@ -15,7 +15,7 @@ describe("Pagination Component", () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     expect(screen.getByText("1")).toBeInTheDocument();
@@ -34,13 +34,13 @@ describe("Pagination Component", () => {
         currentPage={3}
         totalPages={0}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     expect(screen.queryByText("1")).not.toBeInTheDocument();
 
     expect(
-      screen.queryByLabelText("Go to previous page"),
+      screen.queryByLabelText("Go to previous page")
     ).not.toBeInTheDocument();
     expect(screen.queryByLabelText("Go to next page")).not.toBeInTheDocument();
   });
@@ -51,7 +51,7 @@ describe("Pagination Component", () => {
         currentPage={2}
         totalPages={3}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     expect(screen.getByText("1")).toBeInTheDocument();
@@ -68,7 +68,7 @@ describe("Pagination Component", () => {
         currentPage={2}
         totalPages={6}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     expect(screen.getByText("1")).toBeInTheDocument();
@@ -84,7 +84,7 @@ describe("Pagination Component", () => {
         currentPage={3}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     const page3Button = screen.getByText("3");
@@ -99,7 +99,7 @@ describe("Pagination Component", () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     const prevButton = screen.getByLabelText("Go to previous page");
@@ -114,7 +114,7 @@ describe("Pagination Component", () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     const prevButton = screen.getByLabelText("Go to previous page");
@@ -127,7 +127,7 @@ describe("Pagination Component", () => {
         currentPage={5}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     const nextButton = screen.getByLabelText("Go to next page");
@@ -140,7 +140,7 @@ describe("Pagination Component", () => {
         currentPage={6}
         totalPages={10}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     expect(screen.getByText("1")).toBeInTheDocument();
@@ -155,7 +155,7 @@ describe("Pagination Component", () => {
         currentPage={1}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     const nextButton = screen.getByLabelText("Go to next page");
@@ -170,7 +170,7 @@ describe("Pagination Component", () => {
         currentPage={5}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     const nextButton = screen.getByLabelText("Go to next page");
@@ -185,7 +185,7 @@ describe("Pagination Component", () => {
         currentPage={5}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     const nextButton = screen.getByLabelText("Go to next page");
@@ -200,7 +200,7 @@ describe("Pagination Component", () => {
         currentPage={9}
         totalPages={10}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     expect(screen.getByText("1")).toBeInTheDocument();
@@ -215,7 +215,7 @@ describe("Pagination Component", () => {
         currentPage={2}
         totalPages={5}
         onPageChange={mockOnPageChange}
-      />,
+      />
     );
 
     const prevButton = screen.getByLabelText("Go to previous page");

@@ -21,7 +21,7 @@ function LayoutHeader({ ...props }: HTMLAttributes<HTMLDivElement>) {
         Characters
       </Link>,
     ],
-    [pathname],
+    [pathname]
   );
 
   return (

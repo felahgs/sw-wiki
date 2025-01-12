@@ -14,10 +14,10 @@ describe("LayoutHeader", () => {
 
     expect(screen.getByRole("link", { name: /Films/i })).toHaveClass("active");
     expect(screen.getByRole("link", { name: /Characters/i })).not.toHaveClass(
-      "active",
+      "active"
     );
     expect(screen.getByRole("link", { name: /Home/i })).not.toHaveClass(
-      "active",
+      "active"
     );
   });
 
@@ -27,13 +27,13 @@ describe("LayoutHeader", () => {
     render(<LayoutHeader />);
 
     expect(screen.getByRole("link", { name: /Characters/i })).toHaveClass(
-      "active",
+      "active"
     );
     expect(screen.getByRole("link", { name: /Films/i })).not.toHaveClass(
-      "active",
+      "active"
     );
     expect(screen.getByRole("link", { name: /Home/i })).not.toHaveClass(
-      "active",
+      "active"
     );
   });
 
@@ -44,10 +44,10 @@ describe("LayoutHeader", () => {
 
     expect(screen.getByRole("link", { name: /Home/i })).toHaveClass("active");
     expect(screen.getByRole("link", { name: /Films/i })).not.toHaveClass(
-      "active",
+      "active"
     );
     expect(screen.getByRole("link", { name: /Characters/i })).not.toHaveClass(
-      "active",
+      "active"
     );
   });
 });

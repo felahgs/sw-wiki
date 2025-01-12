@@ -8,7 +8,7 @@ import Image from "next/image";
 interface CharactersListProps {
   charactersPromise: (
     totalPages?: number,
-    search?: string,
+    search?: string
   ) => Promise<CharactersResponse>;
   page?: number;
   search?: string;
